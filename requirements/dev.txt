@@ -9,5 +9,6 @@ pre-commit==3.0.2
 # Testing
 factory-boy==3.2.1
 django-nose==1.4.7
+
 #nose-progressive==1.5.2
 coverage==7.1.0
