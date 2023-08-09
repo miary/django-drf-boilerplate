@@ -1,18 +1,24 @@
 import os
 import sentry_sdk
 import sys
-import dotenv
-
+from dotenv import load_dotenv
 from datetime import timedelta
 from sentry_sdk.integrations.django import DjangoIntegration
 from os.path import join
+import django
+from django.utils.encoding import smart_str
+
+django.utils.encoding.smart_text = smart_str
+
+load_dotenv()
 
 TESTING = sys.argv[1:2] == ['test']
 
 ROOT_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 if not TESTING:
-    dotenv.read_dotenv(ROOT_DIR)
+    ROOT_DIR = os.getenv("ROOT_DIR")
+    #dotenv.read_dotenv(ROOT_DIR)
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 

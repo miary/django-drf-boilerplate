@@ -1,7 +1,9 @@
 from django.conf import settings
-from django.urls import path, re_path, include, reverse_lazy
+
+from django.conf.urls import include
+from django.urls import re_path as url, reverse_lazy, path
+
 from django.conf.urls.static import static
-from django.conf.urls import url
 from django.contrib import admin
 from django.views.generic.base import RedirectView
 from rest_framework.routers import DefaultRouter
@@ -49,5 +51,5 @@ urlpatterns = [
     url(r'^redoc/$', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
     url(r'^health/', include('health_check.urls')),
     # the 'api-root' from django rest-frameworks default router
-    re_path(r'^$', RedirectView.as_view(url=reverse_lazy('api-root'), permanent=False)),
+    url(r'^$', RedirectView.as_view(url=reverse_lazy('api-root'), permanent=False)),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
