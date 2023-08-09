@@ -42,7 +42,6 @@ INSTALLED_APPS = (
     'easy_thumbnails',  # image lib
     'social_django',  # social login
     'corsheaders',  # cors handling
-    'django_inlinecss',  # inline css in templates
     'django_summernote',  # text editor
     'django_celery_beat',  # task scheduler
     'djmoney',  # money object
