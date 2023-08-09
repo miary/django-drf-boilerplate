@@ -7,7 +7,7 @@ This is boilerplate for starting fresh new DRF projects. It's built using [cooki
 ## Highlights
 
 - Modern Python development with Python 3.8+
-- Bleeding edge Django 3.1+
+- Bleeding edge Django 4.2+
 - Fully dockerized, local development via docker-compose.
 - PostgreSQL
 - Full test coverage, continuous integration, and continuous deployment.
